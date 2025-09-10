@@ -1,1 +1,15 @@
-
+{
+  "name": "fca-anurag",
+  "version": "1.0.0",
+  "description": "Custom Facebook Chat API by Anurag",
+  "main": "index.js",
+  "author": "Anurag Mishra",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0",
+    "mqtt": "^5.0.0",
+    "bluebird": "^3.7.2",
+    "npmlog": "^7.0.1"
+  }
+}
