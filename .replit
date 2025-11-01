@@ -12,15 +12,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "validate"
+args = "info"
 
 [[workflows.workflow]]
-name = "validate"
+name = "info"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "node validate.js"
+args = "node info.js"
 
 [workflows.workflow.metadata]
 outputType = "console"
