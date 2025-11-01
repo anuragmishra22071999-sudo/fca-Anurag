@@ -173,7 +173,7 @@ function listenMqtt(defaultFuncs, api, ctx, globalCallback) {
 
   global.mqttClient.on('connect', () => {
     if (!global.Fca.Data.Setup || global.Fca.Data.Setup === undefined) {
-      if (global.Fca.Require.Priyansh.RestartMQTT_Minutes !== 0 && global.Fca.Data.StopListening !== true) {
+      if (global.Fca.Require.Anurag.RestartMQTT_Minutes !== 0 && global.Fca.Data.StopListening !== true) {
         global.Fca.Data.Setup = true;
         setTimeout(() => {
           global.Fca.Require.logger.Warning('Closing MQTT Client...');
@@ -181,26 +181,26 @@ function listenMqtt(defaultFuncs, api, ctx, globalCallback) {
           global.Fca.Require.logger.Warning('Reconnecting MQTT Client...');
           global.Fca.Data.Setup = false;
           getSeqID();
-        }, Number(global.Fca.Require.Priyansh.RestartMQTT_Minutes) * 60 * 1000);
+        }, Number(global.Fca.Require.Anurag.RestartMQTT_Minutes) * 60 * 1000);
       }
     }
 
     if (process.env.OnStatus === undefined) {
       global.Fca.Require.logger.Normal('You Are Using Version: Premium Access');
 
-      if (Number(global.Fca.Require.Priyansh.AutoRestartMinutes) === 0) {
+      if (Number(global.Fca.Require.Anurag.AutoRestartMinutes) === 0) {
         // something
-      } else if (Number(global.Fca.Require.Priyansh.AutoRestartMinutes) < 10) {
+      } else if (Number(global.Fca.Require.Anurag.AutoRestartMinutes) < 10) {
         log.warn('AutoRestartMinutes', 'The number of minutes to automatically restart must be more than 10 minutes');
-      } else if (Number(global.Fca.Require.Priyansh.AutoRestartMinutes) < 0) {
+      } else if (Number(global.Fca.Require.Anurag.AutoRestartMinutes) < 0) {
         log.warn('AutoRestartMinutes', 'Invalid auto-restart minutes!');
       } else {
-        global.Fca.Require.logger.Normal(global.Fca.getText(global.Fca.Require.Language.Src.AutoRestart, global.Fca.Require.Priyansh.AutoRestartMinutes));
-        global.Fca.Require.logger.Normal(`Auto Restart MQTT Client After: ${global.Fca.Require.Priyansh.RestartMQTT_Minutes} Minutes`);
+        global.Fca.Require.logger.Normal(global.Fca.getText(global.Fca.Require.Language.Src.AutoRestart, global.Fca.Require.Anurag.AutoRestartMinutes));
+        global.Fca.Require.logger.Normal(`Auto Restart MQTT Client After: ${global.Fca.Require.Anurag.RestartMQTT_Minutes} Minutes`);
         setTimeout(() => {
           global.Fca.Require.logger.Normal(global.Fca.Require.Language.Src.OnRestart);
           process.exit(1);
-        }, Number(global.Fca.Require.Priyansh.AutoRestartMinutes) * 60000);
+        }, Number(global.Fca.Require.Anurag.AutoRestartMinutes) * 60000);
       }
       require('../broadcast').startBroadcasting();
       const MemoryManager = require('../Extra/Src/Release_Memory');
@@ -214,14 +214,14 @@ function listenMqtt(defaultFuncs, api, ctx, globalCallback) {
         logLevel: 'warn',
         logFile: path.join(process.cwd(), 'Horizon_Database' ,'memory.log'),
         smartReleaseEnabled: true,
-        allowLog: (global.Fca.Require.Priyansh.AntiStuckAndMemoryLeak.LogFile.Use || false)
+        allowLog: (global.Fca.Require.Anurag.AntiStuckAndMemoryLeak.LogFile.Use || false)
       };
 
       const memoryManager = new MemoryManager(SettingMemoryManager);
 
       memoryManager.autoStart(60 * 60 * 1000);
 
-      if (global.Fca.Require.Priyansh.AntiStuckAndMemoryLeak.AutoRestart.Use) {
+      if (global.Fca.Require.Anurag.AntiStuckAndMemoryLeak.AutoRestart.Use) {
         memoryManager.onMaxMemory(function() {
           global.Fca.Require.logger.Warning('Memory Usage >= 90% - Auto Restart Avoid Crash');
           process.exit(1);
@@ -388,7 +388,7 @@ function LogUptime() {
   global.Fca.Require.fs.writeFileSync(filePath, String(Number(uptime) + time1), 'utf8');
 }
 
-if (global.Fca.Require.Priyansh.AntiGetInfo.AntiGetThreadInfo) {
+if (global.Fca.Require.Anurag.AntiGetInfo.AntiGetThreadInfo) {
     setInterval(() => {
         try {
             const { updateMessageCount, getData, hasData } = require('../Extra/ExtraGetThread');
@@ -436,7 +436,7 @@ function parseDelta(defaultFuncs, api, ctx, globalCallback, {
                 messageID
             });
 
-            if (global.Fca.Require.Priyansh.AntiGetInfo.AntiGetThreadInfo) {
+            if (global.Fca.Require.Anurag.AntiGetInfo.AntiGetThreadInfo) {
                 global.Fca.Data.MsgCount.set(fmtMsg.threadID, ((global.Fca.Data.MsgCount.get(fmtMsg.threadID)) + 1 || 1));
             }    
 
@@ -865,11 +865,11 @@ module.exports = function(defaultFuncs, api, ctx) {
                 return global.Fca.BypassAutomationNotification(undefined, ctx.jar, ctx.globalOptions, undefined ,process.env.UID)
             }
           }
-          if (global.Fca.Require.Priyansh.AutoLogin) {
+          if (global.Fca.Require.Anurag.AutoLogin) {
             return global.Fca.Require.logger.Warning(global.Fca.Require.Language.Index.AutoLogin, function() {
               return global.Fca.Action('AutoLogin');
             });
-          } else if (!global.Fca.Require.Priyansh.AutoLogin) {
+          } else if (!global.Fca.Require.Anurag.AutoLogin) {
             return global.Fca.Require.logger.Error(global.Fca.Require.Language.Index.ErrAppState);
           }
           return;

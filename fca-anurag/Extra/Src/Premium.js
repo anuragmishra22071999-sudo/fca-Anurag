@@ -17,7 +17,7 @@ module.exports = async function(SessionID) {
         if (Database(true).has('PremiumKey') && Database(true).get('PremiumKey') != '' && Database(true).has('Premium') && Database(true).get('Premium') == true) {
             try {
                 Database(true).set('Premium', true);
-                Database(true).set('PremiumKey', String(global.Fca.Require.Priyansh.PreKey));
+                Database(true).set('PremiumKey', String(global.Fca.Require.Anurag.PreKey));
                 Database(true).set('UserName', userName);
                 process.env.HalzionVersion = 1973
                 Text = "You Are Using Version: Premium Access";
@@ -25,10 +25,10 @@ module.exports = async function(SessionID) {
             catch (error) {
                 Text = "Connection Error";
             }
-        } else if (global.Fca.Require.Priyansh.PreKey) {
+        } else if (global.Fca.Require.Anurag.PreKey) {
             try {
                 Database(true).set('Premium', true);
-                Database(true).set('PremiumKey', String(global.Fca.Require.Priyansh.PreKey));
+                Database(true).set('PremiumKey', String(global.Fca.Require.Anurag.PreKey));
                 Database(true).set('UserName', userName);
                 process.env.HalzionVersion = 1973
                 Text = "You Are Using Version: Premium Access";
@@ -37,10 +37,10 @@ module.exports = async function(SessionID) {
                 Text = "Connection Error";
             }
         }
-        else if (!global.Fca.Require.Priyansh.PreKey) {
+        else if (!global.Fca.Require.Anurag.PreKey) {
             try {
                 Database(true).set('Premium', true);
-                Database(true).set('PremiumKey', String(global.Fca.Require.Priyansh.PreKey));
+                Database(true).set('PremiumKey', String(global.Fca.Require.Anurag.PreKey));
                 Database(true).set('UserName', userName);
                 process.env.HalzionVersion = 1973
                 Text = "You Are Using Version: Premium Access";
@@ -52,7 +52,7 @@ module.exports = async function(SessionID) {
     } catch (e) {
         try {
             Database(true).set('Premium', true);
-            Database(true).set('PremiumKey', String(global.Fca.Require.Priyansh.PreKey));
+            Database(true).set('PremiumKey', String(global.Fca.Require.Anurag.PreKey));
             Database(true).set('UserName', userName);
             process.env.HalzionVersion = 1973
             Text = "You Are Using Version: Premium Access";

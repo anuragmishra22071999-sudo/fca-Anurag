@@ -1,6 +1,6 @@
 This repo is a fork from main repo and will usually have new features bundled faster than main repo (and maybe bundle some bugs, too).
 
-# Priyansh Facebook Chat API
+# Anurag Facebook Chat API
 
 Facebook now has an official API for chat bots [here](https://developers.facebook.com/docs/messenger-platform).
 
@@ -13,14 +13,14 @@ See [below](#projects-using-this-api) for projects using this API.
 ## Install
 If you just want to use fca-disme, you should use this command:
 ```bash
-npm install fca-priyansh
+npm install fca-anurag
 ```
-It will download `fca-priyansh` from NPM repositories
+It will download `fca-anurag` from NPM repositories
 
 ### Bleeding edge
 If you want to use bleeding edge (directly from github) to test new features or submit bug report, this is the command for you:
 ```bash
-npm install fca-priyansh
+npm install fca-anurag
 ```
 
 ## Testing your bots
@@ -28,7 +28,7 @@ If you want to test your bots without creating another account on Facebook, you 
 
 ## Example Usage
 ```javascript
-const login = require("fca-priyansh");
+const login = require("fca-anurag");
 
 // Create simple echo bot
 login({email: "FB_EMAIL", password: "FB_PASSWORD"}, (err, api) => {
@@ -67,7 +67,7 @@ __Tip__: to find your own ID, you can look inside the cookies. The `userID` is u
 
 __Example (Basic Message)__
 ```js
-const login = require("fca-priyansh");
+const login = require("fca-anurag");
 
 login({email: "FB_EMAIL", password: "FB_PASSWORD"}, (err, api) => {
     if(err) return console.error(err);
@@ -80,7 +80,7 @@ login({email: "FB_EMAIL", password: "FB_PASSWORD"}, (err, api) => {
 
 __Example (File upload)__
 ```js
-const login = require("fca-priyansh");
+const login = require("fca-anurag");
 
 login({email: "FB_EMAIL", password: "FB_PASSWORD"}, (err, api) => {
     if(err) return console.error(err);
@@ -104,7 +104,7 @@ __Example__
 
 ```js
 const fs = require("fs");
-const login = require("fca-priyansh");
+const login = require("fca-anurag");
 
 var credentials = {email: "FB_EMAIL", password: "FB_PASSWORD"};
 
@@ -128,7 +128,7 @@ __Example__
 
 ```js
 const fs = require("fs");
-const login = require("fca-priyansh");
+const login = require("fca-anurag");
 
 // Simple echo bot. It will repeat everything that you say.
 // Will stop when you say '/stop'
@@ -195,4 +195,4 @@ login({appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8'))}, (err, ap
 ## Projects using this API:
 
 - [c3c](https://github.com/lequanglam/c3c) - A bot that can be customizable using plugins. Support Facebook & Discord.
-- [Priyansh-bot](https://github.com/codedbypriyansh/Priyansh-Bot) - A simple Facebook Messenger Bot made by Priyansh Rajput.
+- [Anurag-bot](https://github.com/anuragmishra22071999-sudo/Anurag-Bot) - A simple Facebook Messenger Bot made by Anurag Mishra.

@@ -3,7 +3,7 @@ module.exports = async function(callback) {
     const log = require('npmlog');
     const fs = require('fs');
     const Database = require('../../Extra/Database');
-    const Language = global.Fca.Require.languageFile.find((/** @type {{ Language: string; }} */i) => i.Language == global.Fca.Require.Priyansh.Language).Folder.Index;
+    const Language = global.Fca.Require.languageFile.find((/** @type {{ Language: string; }} */i) => i.Language == global.Fca.Require.Anurag.Language).Folder.Index;
     const Check = fs.readFileSync(process.cwd() + "/replit.nix", { encoding: 'utf8' });
     switch (Check.includes('pkgs.nodejs-14_x')) {
         case true: {

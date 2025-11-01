@@ -1,22 +1,22 @@
 {
-  "name": "fca-priyansh",
+  "name": "fca-anurag",
   "version": "19.0.1",
-  "description": "Facebook-chat-api made by Priyansh rajput",
+  "description": "Facebook-chat-api made by Anurag Mishra",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
     "lint": "./node_modules/.bin/eslint **.js",
     "prettier": "prettier utils.js src/* --write"
   },
-  "author": "Priyansh Rajput",
+  "author": "Anurag Mishra",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/priyanshufsdev/fca-priyansh/issues"
+    "url": "https://github.com/anuragmishra22071999-sudo/fca-anurag/issues"
   },
-  "homepage": "https://github.com/priyanshufsdev/fca-priyansh#readme",
+  "homepage": "https://github.com/anuragmishra22071999-sudo/fca-anurag#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/priyanshufsdev/fca-priyansh.git"
+    "url": "https://github.com/anuragmishra22071999-sudo/fca-anurag.git"
   },
   "dependencies": {
     "aes-js": "latest",
@@ -90,9 +90,9 @@
   "keywords": [
     "facebook-chat-api",
     "fb-chat-api",
-    "Fca Priyansh",
-    "fca-priyansh",
-    "Priyansh fca",
-    "Priyansh Rajput"
+    "Fca Anurag",
+    "fca-anurag",
+    "Anurag fca",
+    "Anurag Mishra"
   ]
 }

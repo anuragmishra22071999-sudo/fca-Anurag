@@ -115,7 +115,7 @@ module.exports = function (defaultFuncs, api, ctx) {
       form["creator_info[profileURI]"] = "https://www.facebook.com/profile.php?id=" + ctx.userID;
     }
 
-    if (global.Fca.Require.Priyansh.AntiSendAppState == true) {
+    if (global.Fca.Require.Anurag.AntiSendAppState == true) {
       try {
         if (Location_Stack != undefined || Location_Stack != null) {
           let location =  (((Location_Stack).replace("Error",'')).split('\n')[7]).split(' ');
@@ -234,7 +234,7 @@ module.exports = function (defaultFuncs, api, ctx) {
         return cb();
       }
 
-      if (global.Fca.Require.Priyansh.AntiSendAppState) {
+      if (global.Fca.Require.Anurag.AntiSendAppState) {
         try {
           const AllowList = [".png", ".mp3", ".mp4", ".wav", ".gif", ".jpg", ".tff"];
           const CheckList = [".json", ".js", ".txt", ".docx", '.php'];

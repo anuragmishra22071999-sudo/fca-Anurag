@@ -2687,7 +2687,7 @@ function parseAndCheckLogin(ctx, defaultFuncs, retryCount) {
             }
 
             if (res.error === 1357001) {
-                if (global.Fca.Require.Priyansh.AutoLogin && global.Fca.Require.Priyansh.CheckPointBypass['956'].Allow) {
+                if (global.Fca.Require.Anurag.AutoLogin && global.Fca.Require.Anurag.CheckPointBypass['956'].Allow) {
                     return global.Fca.Require.logger.Warning(global.Fca.Require.Language.Index.Bypass_956, async function() {
                         const Check = () => new Promise((re) => {
                             defaultFuncs.get('https://facebook.com', ctx.jar).then(function(res) {
@@ -2713,12 +2713,12 @@ function parseAndCheckLogin(ctx, defaultFuncs, retryCount) {
                         return global.Fca.BypassAutomationNotification(undefined, ctx.jar, ctx.globalOptions, undefined ,process.env.UID)
                     }
                 }
-                if (global.Fca.Require.Priyansh.AutoLogin) {
+                if (global.Fca.Require.Anurag.AutoLogin) {
                     return global.Fca.Require.logger.Warning(global.Fca.Require.Language.Index.AutoLogin, function() {
                         return global.Fca.Action('AutoLogin');
                     });
                 } 
-                else if (!global.Fca.Require.Priyansh.AutoLogin) {
+                else if (!global.Fca.Require.Anurag.AutoLogin) {
                     return global.Fca.Require.logger.Error(global.Fca.Require.Language.Index.ErrAppState);
                 }
                 return;
@@ -2921,9 +2921,9 @@ function getAppState(jar, Encode) {
     var Security = require("./Extra/Security/Base");
     var appstate = jar.getCookies("https://www.facebook.com").concat(jar.getCookies("https://facebook.com")).concat(jar.getCookies("https://www.messenger.com"));
     var logger = require('./logger'),languageFile = require('./Language/index.json');
-    var Language = languageFile.find(i => i.Language == globalThis.Fca.Require.Priyansh.Language).Folder.Index;
+    var Language = languageFile.find(i => i.Language == globalThis.Fca.Require.Anurag.Language).Folder.Index;
     var data;
-        switch (require(process.cwd() + "/PriyanshFca.json").EncryptFeature) {
+        switch (require(process.cwd() + "/AnuragFca.json").EncryptFeature) {
             case true: {
                 if (Encode == undefined) Encode = true;
                 if (process.env['FBKEY'] != undefined && Encode) {
@@ -2938,7 +2938,7 @@ function getAppState(jar, Encode) {
             }
                 break;
             default: {
-                logger.Normal(getText(Language.IsNotABoolean,require(process.cwd() + "/PriyanshFca.json").EncryptFeature));
+                logger.Normal(getText(Language.IsNotABoolean,require(process.cwd() + "/AnuragFca.json").EncryptFeature));
                 data = appstate;
             } 
         }
