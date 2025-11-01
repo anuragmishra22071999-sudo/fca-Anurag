@@ -11,7 +11,7 @@ _Disclaimer_: We are not responsible if your account gets banned for spammy acti
 See [below](#projects-using-this-api) for projects using this API.
 
 ## Install
-If you just want to use fca-disme, you should use this command:
+If you just want to use fca-anurag, you should use this command:
 ```bash
 npm install fca-anurag
 ```
